@@ -1,0 +1,594 @@
+// Import custom font from Google
+//@import url('https://fonts.googleapis.com/css?family=Spectral:400,400i,700');
+//@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Muli:400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Chivo:400,400i,700');
+
+// Override / set color variables
+$white: #fff;
+$black: #333;
+//$green: #429e1e;
+$green: #2b6d11;
+//$blue: #107ab8;
+$blue: #1a597e;
+$orange: #df5119;
+$yellow: #faf095;
+$red: #d41528;
+
+// Create grayscale
+$gray-dark: #292b2c;
+$gray: #3f3f3f;
+$gray-light: #7e7e7e;
+$gray-lighter: #ededed;
+$gray-lightest: #fafafa;
+
+// Set brand colors
+$primary: $green;
+//$secondary: $gray;
+$success: $green;
+$info: $yellow;
+$warning: $orange;
+$danger: $red;
+$dark: $blue;
+
+// Override button colors
+$btn-info-color: darken($info, 45);
+
+// Override alert background colors
+$state-success-bg: lighten($success, 30);
+$state-info-bg: lighten($info, 30);
+$state-warning-bg: lighten($warning, 30);
+$state-danger-bg: lighten($danger, 45);
+
+// Override alert text colors
+$state-success-text: darken($success, 30);
+$state-info-text: darken($info, 30);
+$state-warning-text: darken($warning, 30);
+$state-danger-text: darken($danger, 10);
+
+// Override badges padding (doubled because otherwise too crammed)
+$badge-padding-x: 0.8em;
+$badge-padding-y: 0.4em;
+
+// Don't make badges normal instead of bold
+$badge-font-weight: normal;
+
+// Override fonts
+//$font-family-sans-serif: 'Roboto', sans-serif;
+//$font-family-serif: 'Spectral', Georgia, 'Times New Roman', Times, serif;
+$font-family-sans-serif: 'Chivo', sans-serif;
+$font-family-serif: 'Muli', Arial, 'Helvetica Neue', sans-serif;
+$font-family-monospace: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+$font-family-base: $font-family-serif;
+
+$font-size-base: 0.9rem;
+
+// Set global options
+$enable-shadows: false;
+$enable-gradients: true;
+
+//$btn-font-family: $font-family-sans-serif;
+//$input-font-family: $font-family-sans-serif;
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+
+.form-inline select, .form-inline input {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.form-inline button {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+// .navbar .nav-link, .btn, .nav-tabs .nav-link, .nav-pills .nav-link, .breadcrumb, .pagination, .dropdown-menu .dropdown-item, .tooltip, .badge, .progress-bar, .footer, .progress-bar-center-label {
+//   font-family: $font-family-sans-serif;
+//   font-size: 13px;
+//   line-height: 22px;
+//   font-weight: 400;
+//   text-transform: uppercase;
+// }
+
+.badge {
+  font-size: 9px;
+  line-height: 18px;
+  margin-left: 6px;
+}
+
+fieldset.form-group {
+  margin: 6px 0;
+}
+
+fieldset.form-group legend {
+  padding-bottom: 0px !important;
+}
+
+.list-unstyled li {
+  margin-top: 7px;
+}
+
+.form-static-label {
+}
+
+.form-static-value {
+  display: block;
+  padding-top: calc(.375rem + 2px);
+  //padding: calc(.375rem + 2px) .75rem 0 .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $gray;
+}
+
+.form-indented-value {
+  padding-left: 0.75rem;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+// Fixes a bug where the date picker ends up behind the top navbar
+div.b-form-datepicker div.dropdown-menu {
+  z-index: 1100;
+}
+
+.card-header h2 {
+  margin-bottom: 0;
+}
+
+.stripe-card-container {
+  padding-top: 9px;
+}
+
+/* Filtered table */
+
+thead.hidden_header tr[role="row"] {
+  display: none;
+}
+
+small, .small {
+  font-family: $font-family-sans-serif;
+  font-size: 80%;
+}
+
+// From heropatterns.com
+// body {
+//   background-color: #fefefe;
+//   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='18' viewBox='0 0 100 18'%3E%3Cpath fill='%23eeeded' fill-opacity='0.3' d='M61.82 18c3.47-1.45 6.86-3.78 11.3-7.34C78 6.76 80.34 5.1 83.87 3.42 88.56 1.16 93.75 0 100 0v6.16C98.76 6.05 97.43 6 96 6c-9.59 0-14.23 2.23-23.13 9.34-1.28 1.03-2.39 1.9-3.4 2.66h-7.65zm-23.64 0H22.52c-1-.76-2.1-1.63-3.4-2.66C11.57 9.3 7.08 6.78 0 6.16V0c6.25 0 11.44 1.16 16.14 3.42 3.53 1.7 5.87 3.35 10.73 7.24 4.45 3.56 7.84 5.9 11.31 7.34zM61.82 0h7.66a39.57 39.57 0 0 1-7.34 4.58C57.44 6.84 52.25 8 46 8S34.56 6.84 29.86 4.58A39.57 39.57 0 0 1 22.52 0h15.66C41.65 1.44 45.21 2 50 2c4.8 0 8.35-.56 11.82-2z'%3E%3C/path%3E%3C/svg%3E");
+// }
+
+.btn {
+  text-transform: uppercase;
+  border: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .4);
+  transition: color .4s, background-color .4s, border-color .4s, box-shadow .4s;
+
+  &-link {
+    box-shadow: none;
+    color: $link-color;
+
+    &:hover,
+    &:focus {
+      box-shadow: none;
+      color: $link-hover-color;
+      text-decoration: $link-hover-decoration;
+    }
+
+    &.disabled, // Although btn-link is intended for buttons, which want to look like link, I include here a.disable for the sake of consistency
+    &[disabled],
+    fieldset[disabled] & {
+      &:hover,
+      &:active:hover {
+        color: $btn-link-disabled-color;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &-secondary {
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+      background-color: rgba(0, 0, 0, .1);
+      color: rgba(0, 0, 0, .4);
+      opacity: 1;
+
+      &:hover,
+      &:focus {
+        background-color: rgba(0, 0, 0, .1);
+      }
+    }
+  }
+
+  &-outline-secondary {
+    border-color: $gray-200;
+    color: $gray-300;
+  }
+
+  &-warning {
+    color: $white;
+  }
+}
+
+.btn-group {
+  .btn + .btn,
+  .btn + .btn-group,
+  .btn-group + .btn,
+  .btn-group + .btn-group {
+    margin-left: 0;
+  }
+
+  &-vertical {
+    > .btn + .btn,
+    > .btn + .btn-group,
+    > .btn-group + .btn,
+    > .btn-group + .btn-group {
+      margin-top: 0;
+    }
+  }
+
+  .btn + .btn,
+  .btn + .btn-group > .dropdown-toggle {
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, .4);
+  }
+}
+
+.card {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .4);
+
+  &.border-primary,
+  &.border-secondary,
+  &.border-success,
+  &.border-info,
+  &.border-warning,
+  &.border-danger,
+  &.border-light,
+  &.border-dark {
+    border-width: 1px;
+  }
+}
+
+// Navbar ======================================================================
+
+.navbar {
+  border: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+
+  &-brand {
+    font-size: 24px;
+  }
+
+  &-nav .nav-link {
+    padding-top: .9rem;
+    padding-bottom: .9rem;
+  }
+
+  &.bg-dark,
+  &.bg-primary {
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="number"],
+    input[type="tel"] {
+      color: $white;
+      box-shadow: inset 0 -1px 0 rgba(255, 255, 255, .5);
+
+      &:focus {
+        box-shadow: inset 0 -2px 0 $white;
+      }
+
+      &::placeholder {
+        color: rgba(255, 255, 255, .5);
+      }
+    }
+  }
+}
+
+.nav-tabs {
+  .nav-item + .nav-item {
+    margin-left: 0;
+  }
+
+  .nav-link,
+  .nav-link:focus {
+    margin-right: 0;
+    background-color: transparent;
+    border: none;
+    color: $body-color;
+    box-shadow: inset 0 -1px 0 #ddd;
+    transition: color .2s, box-shadow .2s;
+
+    &:hover {
+      background-color: transparent;
+      box-shadow: inset 0 -2px 0 $primary;
+      color: $primary;
+    }
+  }
+
+  .nav-link.active,
+  .nav-link.active:focus {
+    border: none;
+    box-shadow: inset 0 -2px 0 $primary;
+    color: $primary;
+
+    &:hover {
+      border: none;
+      color: $primary;
+    }
+  }
+
+  .nav-link.disabled {
+    box-shadow: inset 0 -1px 0 #ddd;
+  }
+
+  &.nav-justified {
+    .nav-link,
+    .nav-link:hover,
+    .nav-link:focus,
+    .nav-link.active,
+    .nav-link.active:hover,
+    .nav-link.active:focus {
+      border: none;
+    }
+  }
+
+  .dropdown-menu {
+    margin-top: 0;
+  }
+}
+
+.dropdown-menu {
+  margin-top: 0;
+  border: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+}
+
+// Misc.
+
+.btn { padding: 12px 20px; }
+
+// This is for the calendar button on a DatePickerControl -- not sure if this selector is too generic
+// .btn.dropdown-toggle { padding: 0px 20px; }
+
+// This is used for the filter on a table when the filter is multi-select
+.btn.dropdown-toggle.btn-sm { padding: 8px 20px; }
+
+
+fieldset.form-group {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+body.zoom-90 {
+  transform: scale(0.9);
+  transform-origin: 0 0;
+  width: 111.1%;
+}
+
+body.zoom-100 {
+}
+
+body.zoom-110 {
+  transform: scale(1.1);
+  transform-origin: 0 0;
+  width: 90.9%;
+}
+
+table.table thead th fieldset.form-group {
+  margin: 0;
+}
+
+table.table thead th fieldset.form-group div.b-form-tags.multiselect {
+  padding: 0;
+  border: 0;
+}
+
+table.table thead th fieldset.form-group div.b-form-tags .badge {
+  font-size: 12px;
+}
+
+.list-group-item .badge {
+  font-size: 12px;
+}
+
+
+.slide-enter-active {
+  transition-duration: 0.3s;
+  //transition-timing-function: ease-in;
+  //transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.slide-leave-active {
+  transition-duration: 0.3s;
+  //transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.slide-enter-to, .slide-leave {
+  max-height: 300px;
+  overflow: hidden;
+}
+
+.slide-enter, .slide-leave-to {
+  overflow: hidden;
+  max-height: 0;
+}
+
+.navbar-incoming-agent-call li.nav-item {
+  margin: 0 20px;
+}
+
+.nav-pills .nav-link {
+  border: 1px solid $gray-lighter;
+  margin-right: 10px;
+}
+
+.b-calendar .b-calendar-grid-body .col[data-date] .btn {
+  border-radius: 0 !important;
+}
+
+.btn-danger {
+  color: white;
+}
+
+/* Trying to tighten up the whitespace */
+
+// fieldset.form-group {
+//   margin-top: 1px;
+//   margin-bottom: 2px;
+// }
+
+.navbar {
+  padding: .1rem 1rem;
+}
+
+
+
+
+fieldset.form-floating-label-group {
+  margin-top: 7px;
+  margin-bottom: 4px;
+}
+
+.form-floating-label-group {
+  position: relative;
+}
+.form-floating-label-group > legend {
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 100%;
+  //border: 1px solid transparent;
+  //border-radius: .25rem;
+  padding-left: .75rem;
+  //text-shadow: 0px 0px 3px #fff;
+
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: lighten($gray-light, 15);
+  top: 3px;
+
+  z-index: 1;
+
+  //transition: all .3s ease-in-out;
+}
+
+.form-floating-label-group:focus-within > legend {
+  color: $blue;
+
+  //transition: all .5s ease-in-out;
+}
+
+.form-floating-label-group small.form-text {
+  position: relative;
+  top: -.25rem;
+  padding-left: .75rem;
+  font-style: italic;
+}
+
+input.floating-label, textarea.floating-label, span.floating-label, div.floating-label {
+  padding: 1.5rem .75rem .375rem .75rem;
+}
+
+input.floating-label {
+  height: calc(2.0em + .75rem + 2px);
+}
+
+select.floating-label {
+  border-color: #e6e6e6;
+  height: calc(2.0em + .75rem + 2px);
+  padding: 1.25rem .75rem .125rem .75rem;
+}
+
+.form-floating-label-group .custom-checkbox {
+  padding-left: 2.25rem;
+}
+
+input.floating-label, textarea.floating-label, select.floating-label {
+  border-bottom-color: #e6e6e6;
+  border-top-color: #f6f6f6;
+  border-left-color: #f6f6f6;
+  border-right-color: #f6f6f6;
+  // border-top-color: transparent;
+  // border-left-color: transparent;
+  // border-right-color: transparent;
+  background-color: #fcfcfc;
+}
+
+input.floating-label:active, textarea.floating-label:active, select.floating-label:active {
+  border-top-color: #e6e6e6;
+  border-left-color: #e6e6e6;
+  border-right-color: #e6e6e6;
+}
+
+.b-form-datepicker button {
+  padding: 4px 12px;
+}
+
+.custom-select:disabled {
+  color: #495057;
+}
+
+.navbar-badge {
+  font-size: 100%;
+  font-weight: bold;
+  color: rgba(255, 255, 255, .3);
+}
+
+.navbar-warning {
+  background-color: darken($danger, 0);
+  color: $gray-lightest;
+  padding: 6px 26px;
+  margin-left: 12px;
+}
+
+.nav .nav-item .nav-link.disabled {
+  color: lighten($gray-light, 30);
+}
+
+.scripted-content {
+  background-color: #f7f6e6;
+}
+
+.scripted-content blockquote {
+  background-color: #fff;
+  margin-bottom: 0;
+}
+
+.scripted-content p {
+  padding: 6px 4px;
+  margin: 0;
+}
+
+pre {
+  background-color: $gray-lighter;
+}
+.navbar.bg-dark .b-dropdown-form input[type="text"] {
+  color: #495057;
+}
+
+.b-dropdown-form {
+  min-width: 240px;
+}
+
+.pivot-table-header {
+  text-align: right;
+}
+
+.pivot-table-header-name-vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  display: inline;
+  // white-space: nowrap;
+  // display: inline-block;
+  // overflow: visible;
+}
+
+.pivot-table-date-picker.b-form-btn-label-control.form-control > .form-control {
+  word-break: keep-all;
+}

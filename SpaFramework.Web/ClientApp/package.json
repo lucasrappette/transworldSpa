@@ -1,0 +1,79 @@
+{
+  "name": "Client-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@aspnet/signalr": "^1.1.4",
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-regular-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/vue-fontawesome": "^0.1.10",
+    "@microsoft/signalr": "^5.0.4",
+    "@vue/runtime-dom": "^3.2.47",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.5.3",
+    "bootstrap-vue": "^2.21.2",
+    "core-js": "^2.6.12",
+    "file-saver": "^2.0.5",
+    "json-prune": "^1.1.0",
+    "jspdf": "^2.3.0",
+    "jspdf-autotable": "^3.5.13",
+    "luxon": "^1.26.0",
+    "marked": "^1.2.7",
+    "mitt": "^2.1.0",
+    "node-sass": "^6.0.1",
+    "npm-check": "^5.9.2",
+    "sass-loader": "^10.2.0",
+    "v-mask": "^2.2.4",
+    "vue": "^2.6.14",
+    "vue-facebook-signin-button": "^1.0.1",
+    "vue-google-signin-button": "^1.0.4",
+    "vue-moment": "^4.1.0",
+    "vue-router": "^3.4.9",
+    "vuex": "^3.1.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.12.1",
+    "@vue/cli-plugin-eslint": "^3.12.1",
+    "@vue/cli-service": "^3.12.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "vue-template-compiler": "^2.6.12"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {
+      "no-console": "off",
+      "no-unused-vars": "off",
+      "no-useless-escape": "off",
+      "vue/no-use-v-if-with-v-for": "off"
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
